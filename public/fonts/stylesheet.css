@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'FONTSPRING DEMO - The Seasons';
+    src: url('FONTSPRINGDEMO-TheSeasonsBold.woff2') format('woff2'),
+        url('FONTSPRINGDEMO-TheSeasonsBold.woff') format('woff'),
+        url('FONTSPRINGDEMO-TheSeasonsBold.ttf') format('truetype'),
+        url('FONTSPRINGDEMO-TheSeasonsBold.svg#FONTSPRINGDEMO-TheSeasonsBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - The Seasons';
+    src: url('FONTSPRINGDEMO-TheSeasonsRegular.woff2') format('woff2'),
+        url('FONTSPRINGDEMO-TheSeasonsRegular.woff') format('woff'),
+        url('FONTSPRINGDEMO-TheSeasonsRegular.ttf') format('truetype'),
+        url('FONTSPRINGDEMO-TheSeasonsRegular.svg#FONTSPRINGDEMO-TheSeasonsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
