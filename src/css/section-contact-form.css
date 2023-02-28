@@ -14,7 +14,7 @@
 
 .contact-form input,
 .contact-form select {
-	width: 220px;
+	width: auto;
 	background-color: rgb(240, 240, 240);
 	border: none;
 	/* border-radius: 100px; */
@@ -163,7 +163,6 @@
 	.contact-form {
 		box-sizing: border-box;
 		gap: 10;
-
 		margin-bottom: 40px;
 		margin-top: 40px;
 		padding: 10px 10px;

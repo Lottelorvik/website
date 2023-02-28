@@ -4,7 +4,7 @@ import supabase from './supabase';
 import lotteimg from './img/lotteimg.JPG';
 //CSS files
 import './App.css';
-import './css/section-1-frontpage.css';
+import './css/section-1-start.css';
 import './css/section-2-intro.css';
 import './css/section-contact-form.css';
 import './css/section-competencies.css';
@@ -77,7 +77,7 @@ function App() {
 		<>
 			<section className='outer-introsection'>
 				<div className='introsectionbackground'>
-					<Frontpage />
+					<Start />
 				</div>
 			</section>
 
@@ -86,6 +86,7 @@ function App() {
 					<FirstIntroText />
 				</div>
 
+				{/* Getting my components */}
 				<Competencies />
 				<PasswordGenerator />
 				<Mathquiz />
@@ -102,7 +103,7 @@ function App() {
 	);
 }
 
-function Frontpage() {
+function Start() {
 	return (
 		<div className='background-box'>
 			<div className='lotte '>LOTTE</div>

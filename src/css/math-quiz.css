@@ -1,6 +1,7 @@
 .quiz-container {
 	width: 100%;
 	display: flex;
+	flex-flow: wrap;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
@@ -9,27 +10,29 @@
 }
 
 .quiz-container2 {
-	flex-grow: 1;
 	display: flex;
-	width: 22%;
+	width: 40%;
 	min-height: 30rem;
 	padding: 10px 20px 30px;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background-color: rgb(0, 0, 0);
+	background-color: rgb(236, 236, 236);
 	text-align: center;
 	border-radius: 3%;
-	background-image: url('/src/img/quiz-img.jpg');
+	/* background-image: url('/src/img/quiz-img-2.jpg'); */
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	border: 2px solid;
+	border-image: linear-gradient(135deg, rgb(0, 225, 255), rgb(247, 0, 255)) 1;
 }
 
 .quiz-container input,
 .quiz-container select {
-	background-color: #616161;
+	background-color: #c0c0c0;
 	border: none;
+	border-radius: 20px;
 	padding: 16px;
 	font-size: 18px;
 	color: inherit;
@@ -37,10 +40,11 @@
 	align-items: center;
 	flex-direction: column;
 	margin: 20px 10px 10px;
+	width: 50%;
 }
 
 .quiz-container input::placeholder {
-	color: #b4b4b4;
+	color: #747474;
 }
 
 .quiz-container input:first-child {
@@ -73,13 +77,13 @@
 }
 
 .quiz-btn-text {
-	color: rgb(255, 255, 255);
+	color: white;
 	padding: 10px 10px 10px;
 	font-family: 'Coiny';
 	font-size: 20px;
 }
 
-.quiz-text {
+.start-btn {
 	color: rgb(255, 255, 255);
 	font-family: 'Coiny';
 	font-size: 30px;
@@ -87,11 +91,11 @@
 
 .quiz-title {
 	font-family: 'Coiny', sans-serif;
-	font-size: 30px;
+	font-size: 35px;
 	line-height: 36px;
-	color: rgb(247, 247, 247);
+	color: #414141;
 	text-align: inherit;
-	font-weight: 600;
+	font-weight: 400;
 	align-items: center;
 	margin-top: 30px;
 	width: 90%;
@@ -117,7 +121,7 @@
 	font-family: 'Nunito Sans', sans-serif;
 	font-size: 45px;
 	line-height: 27px;
-	color: rgb(255, 255, 255);
+	color: rgb(82, 82, 82);
 	text-align: center;
 	white-space: nowrap;
 	align-items: center;
@@ -136,7 +140,7 @@ form {
 .quiz-end-text {
 	font-family: 'Nunito Sans', sans-serif;
 	font-size: 20px;
-	color: rgb(255, 255, 255);
+	color: rgb(82, 82, 82);
 	text-align: center;
 	width: 80%;
 
@@ -146,14 +150,27 @@ form {
 .seconds {
 	font-family: 'Nunito Sans', sans-serif;
 	font-size: 10px;
-	color: rgb(255, 255, 255);
+	color: rgb(82, 82, 82);
 	text-align: center;
 	align-items: center;
 	margin-top: 10px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1400px) {
 	.quiz-container2 {
-		width: 80%;
+		width: 60%;
 	}
+}
+
+@media (max-width: 900px) {
+	.quiz-container2 {
+		width: 90%;
+	}
+}
+
+.score-attempts {
+	color: rgb(16, 106, 141);
+	padding: 10px 10px 10px;
+	font-family: 'Coiny';
+	font-size: 20px;
 }

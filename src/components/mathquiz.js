@@ -11,21 +11,19 @@ function Mathquiz() {
 	const [attempts, setAttemps] = useState(0);
 	const [isDivVisible, setIsDivVisible] = useState(false);
 	const [quizComplete, setQuizComplete] = useState(false);
-	const [seconds, setSeconds] = useState(13);
-	const [isRunning, setIsRunning] = useState(false);
+	const [seconds, setSeconds] = useState(0);
 	const [showStartButton, setShowStartButton] = useState(true);
 
 	const handleStartClick = () => {
-		setIsRunning(true);
 		setIsDivVisible(true);
 		setShowStartButton(false);
-		setSeconds(10);
+		setSeconds(100);
 	};
 
 	useEffect(() => {
 		let countdown;
 
-		if (isRunning) {
+		if (isDivVisible) {
 			countdown = setInterval(() => {
 				setSeconds(seconds => seconds - 1);
 			}, 1000);
@@ -38,7 +36,7 @@ function Mathquiz() {
 		}
 
 		return () => clearInterval(countdown);
-	}, [isRunning, seconds]);
+	}, [isDivVisible, seconds]);
 
 	// const handleTimerEnd = () => {
 	// 	setQuizComplete(true);
@@ -61,7 +59,7 @@ function Mathquiz() {
 			setUserAnswer('');
 			setScore(score + 1);
 			setAttemps(attempts + 1);
-			setNum1(Math.floor(Math.random() * 10));
+			setNum1(Math.floor(Math.random() * 100));
 			setNum2(Math.floor(Math.random() * 10));
 			// setColor('green');
 		} else if (attempts > 9) {
@@ -87,43 +85,39 @@ function Mathquiz() {
 	return (
 		<div className='quiz-container'>
 			<div className='quiz-container2'>
-				<div className='quiz-title'>
-					Get as many as you can right in<br></br>10 seconds!
-				</div>
+				<div className='quiz-title'>Get as many as you can in 20 seconds!</div>
 
 				<div>
 					{showStartButton && (
 						<button className='quiz-btn' onClick={handleStartClick}>
-							<div className='quiz-text'>Start</div>
+							<div className='start-btn'>Start</div>
 						</button>
 					)}
 				</div>
 
 				{isDivVisible && (
 					<div className='quiz-inner-box'>
-						<div className='quiz-inner-con'>
-							<p className='quiz-numbers'>
-								{num1} + {num2} =
-							</p>
-							<form onSubmit={handleSubmit}>
-								<input
-									type='text'
-									value={userAnswer}
-									placeholder='your answer...'
-									onChange={e => setUserAnswer(e.target.value)}
-								/>
+						<p className='quiz-numbers'>
+							{num1} + {num2} =
+						</p>
+						<form onSubmit={handleSubmit}>
+							<input
+								type='text'
+								value={userAnswer}
+								placeholder='your answer...'
+								onChange={e => setUserAnswer(e.target.value)}
+							/>
 
-								<button type='submit' className='quiz-btn'>
-									<p className='quiz-btn-text'>ENTER! </p>
-								</button>
-							</form>
+							<button type='submit' className='quiz-btn'>
+								<p className='quiz-btn-text'>ENTER! </p>
+							</button>
+						</form>
 
-							<p className='quiz-btn-text'>
-								Score: {score} <br></br> Attempts: {attempts}
-							</p>
-							<div className='seconds'> {seconds} seconds left</div>
-							{/* {(feedback.state.color === 'red') } */}
-						</div>
+						<p className='score-attempts'>
+							Score: {score} <br></br> Attempts: {attempts}
+						</p>
+						<div className='seconds'> {seconds} seconds left</div>
+						{/* {(feedback.state.color === 'red') } */}
 					</div>
 				)}
 				{quizComplete && (
