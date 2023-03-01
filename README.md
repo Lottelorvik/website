@@ -1,4 +1,4 @@
-##Lotte Lorvik's personal website
+## Lotte Lorvik's personal website
 
 This project was made with React.
 
