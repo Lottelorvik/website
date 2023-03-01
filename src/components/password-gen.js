@@ -41,44 +41,50 @@ function PasswordGenerator() {
 	}
 
 	return (
-		<div>
-			<form onSubmit={handleSubmit}>
-				<label>
-					Number of characters:
-					<input
-						type='range'
-						min='8'
-						max='100'
-						value={numCharacters}
-						className='slider'
-						onChange={event => setNumCharacters(parseInt(event.target.value))}
-					/>
-					{numCharacters} characters
-				</label>
+		<div className='container'>
+			<div className='password-generator-con'>
+				<form onSubmit={handleSubmit}>
+					<label>
+						<div className='no-characters-text'>Number of characters:</div>
+						<input
+							type='range'
+							min='8'
+							max='100'
+							value={numCharacters}
+							className='slider'
+							onChange={event => setNumCharacters(parseInt(event.target.value))}
+						/>
+						<div className='all-text'>{numCharacters} characters</div>
+					</label>
+					<br />
+					<label>
+						<div className='all-text'>Include symbols:</div>
+
+						<input
+							type='checkbox'
+							checked={includeSymbols}
+							onChange={event => setIncludeSymbols(event.target.checked)}
+						/>
+					</label>
+
+					<br />
+					<button type='submit' className='pas-btn'>
+						Generate Password
+					</button>
+				</form>
 				<br />
-				<label>
-					Include symbols:
-					<input
-						type='checkbox'
-						checked={includeSymbols}
-						onChange={event => setIncludeSymbols(event.target.checked)}
-					/>
-				</label>
-				<br />
-				<button type='submit'>Generate Password</button>
-			</form>
-			<br />
-			{generatedPassword && (
-				<div>
-					<div id='gen-password'>
-						<strong>Generated Password:</strong>
-						{generatedPassword} <div />
-						<button onClick={copyText} className='copy-text-button'>
-							<img src={copy} className='copy-icon' />
-						</button>
+				{generatedPassword && (
+					<div className='all-text'>
+						<div id='gen-password'>
+							<strong>Generated Password: </strong>
+							{generatedPassword} <div />
+							<button onClick={copyText} className='copy-icon'>
+								<img src={copy} />
+							</button>
+						</div>
 					</div>
-				</div>
-			)}
+				)}
+			</div>
 		</div>
 	);
 }

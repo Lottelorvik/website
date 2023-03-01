@@ -11,13 +11,13 @@ function Mathquiz() {
 	const [attempts, setAttemps] = useState(0);
 	const [isDivVisible, setIsDivVisible] = useState(false);
 	const [quizComplete, setQuizComplete] = useState(false);
-	const [seconds, setSeconds] = useState(0);
+	const [seconds, setSeconds] = useState(20);
 	const [showStartButton, setShowStartButton] = useState(true);
 
 	const handleStartClick = () => {
 		setIsDivVisible(true);
 		setShowStartButton(false);
-		setSeconds(100);
+		setSeconds(20);
 	};
 
 	useEffect(() => {
@@ -33,6 +33,7 @@ function Mathquiz() {
 			clearInterval(countdown);
 			setQuizComplete(true);
 			setIsDivVisible(false);
+			setShowStartButton(false);
 		}
 
 		return () => clearInterval(countdown);
