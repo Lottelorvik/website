@@ -46,8 +46,11 @@ function App() {
 
 				{/* Getting my components */}
 				<Competencies />
-				<PasswordGenerator />
-				<Mathquiz />
+				<div className='project-box'>
+					<PasswordGenerator />
+
+					<Mathquiz />
+				</div>
 				<ContactMe />
 			</div>
 		</>

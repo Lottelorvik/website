@@ -3,9 +3,9 @@ import '../css/password-gen.css';
 import copy from '../icons/copy.png';
 
 function PasswordGenerator() {
-	const [numCharacters, setNumCharacters] = useState(8);
+	const [numCharacters, setNumCharacters] = useState(14);
 	const [includeSymbols, setIncludeSymbols] = useState(false);
-	const [generatedPassword, setGeneratedPassword] = useState('');
+	const [generatedPassword, setGeneratedPassword] = useState('Your password will appear here!');
 	const [copied, setCopied] = useState(false);
 
 	function generatePassword(numChars, includeSymbols) {
@@ -40,6 +40,7 @@ function PasswordGenerator() {
 		document.execCommand('copy');
 		document.body.removeChild(el);
 		setCopied(true);
+		setGeneratedPassword('copied!');
 	}
 
 	return (
@@ -50,7 +51,7 @@ function PasswordGenerator() {
 					<input
 						type='range'
 						min='8'
-						max='100'
+						max='70'
 						value={numCharacters}
 						className='slider'
 						onChange={event => setNumCharacters(parseInt(event.target.value))}
@@ -73,16 +74,26 @@ function PasswordGenerator() {
 					</label>
 				</div>
 
+				<div className='input-fields'>
+					<div className='all-text'>Include numbers</div>
+
+					<label className='toggler-wrapper style'>
+						<input type='checkbox' />
+						<div className='toggler-slider'>
+							<div className='toggler-knob'></div>
+						</div>
+					</label>
+				</div>
+
 				<button type='submit' className='pas-btn' onClick={handleSubmit}>
 					Generate Password
 				</button>
 
-				<div className='input-fields'>
+				<div className='input-field-password'>
 					{generatedPassword && (
-						<div className='all-text'>
-							<strong>Generated Password: </strong>
-							{generatedPassword} <div />
-							<button onClick={copyText}> Copy </button>
+						<div className='all-text tooltip' onClick={copyText}>
+							{generatedPassword}
+							<span class='tooltiptext'>Copy</span>
 						</div>
 					)}
 				</div>

@@ -86,6 +86,7 @@ function Mathquiz() {
 	return (
 		<div className='quiz-container'>
 			<div className='quiz-container2'>
+				<div className='quiz-header'>Math quiz!</div>
 				<div className='quiz-title'>Get as many as you can in 20 seconds!</div>
 
 				<div>
@@ -99,7 +100,7 @@ function Mathquiz() {
 				{isDivVisible && (
 					<div className='quiz-inner-box'>
 						<p className='quiz-numbers'>
-							{num1} + {num2} =
+							{num1} + {num2}
 						</p>
 						<form onSubmit={handleSubmit}>
 							<input

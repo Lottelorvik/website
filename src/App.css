@@ -37,6 +37,20 @@
 	text-align: center;
 }
 
+.project-box {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+@media (max-width: 960px) {
+	.project-box {
+		justify-content: center;
+		flex-flow: column;
+	}
+}
+
 .reveal {
 	position: relative;
 	transform: translateY(100px);
