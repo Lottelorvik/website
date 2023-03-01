@@ -3,34 +3,21 @@ import supabase from '../supabase';
 import '../css/section-contact-form.css';
 
 function ContactMe() {
-	const [forms, setForms] = useState([]);
 	const [showForm, setShowForm] = useState(true);
+	const [forms, setForms] = useState([]);
 
 	function ToggleContactForm() {
 		setShowForm(!showForm);
 	}
 
-	useEffect(function () {
-		async function getForms() {
-			// setIsLoading(true);
-
-			let query = supabase.from('contactform').select('*');
-
-			const { data: contactform, error } = await query
-				.order('full_name', { ascending: false })
-				.limit(1000);
-
-			if (!error) setForms(forms);
-			else return null;
-			// setIsLoading(false);
-		}
-		getForms();
-	});
-
 	return (
 		<div className='container'>
 			{showForm ? (
-				<ContactForm ToggleContactForm={ToggleContactForm} />
+				<ContactForm
+					ToggleContactForm={ToggleContactForm}
+					setForms={setForms}
+					setShowForm={setShowForm}
+				/>
 			) : (
 				<Thankyou ToggleContactForm={ToggleContactForm} />
 			)}
@@ -48,7 +35,7 @@ function isValidEmail() {
 	}
 }
 
-function ContactForm({ setForm, setShowForm, ToggleContactForm }) {
+function ContactForm({ SetShowForm, setForms, ToggleContactForm }) {
 	const [full_name, setFullName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
@@ -58,26 +45,28 @@ function ContactForm({ setForm, setShowForm, ToggleContactForm }) {
 	async function handleSubmit(e) {
 		e.preventDefault();
 
-		if (full_name && isValidEmail(email) && message && message.length <= 1000) {
+		if (full_name && email && message && message.length <= 1000) {
 			setIsUploading(true);
-			const { data: newContact, error } = await supabase
+
+			const { data: newForm, error } = await supabase
 				.from('contactform')
 				.insert([{ full_name, email, message }])
 				.select();
 			setIsUploading(false);
 
-			if (!error) setForm(form => [newContact[0], ...form]);
+			if (!error) setForms(forms => [newForm[0], ...forms]);
 
 			setFullName('');
 			setEmail('');
 			setMessage('');
 
-			setShowForm(false);
+			// setShowForm(false);
 		} else if (!full_name) {
 			setFullName('You must enter your full name');
-		} else if (!isValidEmail(email)) {
+		} else if (!email) {
 			alert('Invalid email!');
 		}
+		ToggleContactForm();
 	}
 
 	return (
@@ -88,7 +77,7 @@ function ContactForm({ setForm, setShowForm, ToggleContactForm }) {
 					inquiries or opportunities!
 				</p>
 			</div> */}
-			<form className='contact-form ' onSubmit={handleSubmit}>
+			<form className='contact-form '>
 				<p className='contact-box-header'>Get in touch! </p>
 				<p>________________</p>
 				<p className='outro-text'>
@@ -123,9 +112,10 @@ function ContactForm({ setForm, setShowForm, ToggleContactForm }) {
 				/>
 				<span className='character-limit'>{500 - messageLength}</span>
 				<button
+					type='button'
 					className='contact-btn contact-btn-large'
 					disabled={isUploading}
-					onClick={ToggleContactForm}
+					onClick={handleSubmit}
 				>
 					SUBMIT
 				</button>
@@ -134,7 +124,7 @@ function ContactForm({ setForm, setShowForm, ToggleContactForm }) {
 	);
 }
 
-function Thankyou({ setForm, setShowForm, ToggleContactForm }) {
+function Thankyou({ ToggleContactForm }) {
 	return (
 		<div className='thank-you-box'>
 			<p className='contact-box-header'> Sent! </p>
@@ -143,7 +133,11 @@ function Thankyou({ setForm, setShowForm, ToggleContactForm }) {
 				<br></br>I will get back to you as soon as possible.
 			</p>
 
-			<button className='contact-btn contact-btn-large bottom-btn ' onClick={ToggleContactForm}>
+			<button
+				type='button'
+				className='contact-btn contact-btn-large bottom-btn '
+				onClick={ToggleContactForm}
+			>
 				Back!
 			</button>
 		</div>
