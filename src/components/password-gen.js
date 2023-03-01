@@ -6,6 +6,7 @@ function PasswordGenerator() {
 	const [numCharacters, setNumCharacters] = useState(8);
 	const [includeSymbols, setIncludeSymbols] = useState(false);
 	const [generatedPassword, setGeneratedPassword] = useState('');
+	const [copied, setCopied] = useState(false);
 
 	function generatePassword(numChars, includeSymbols) {
 		const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -38,6 +39,7 @@ function PasswordGenerator() {
 		el.select();
 		document.execCommand('copy');
 		document.body.removeChild(el);
+		setCopied(true);
 	}
 
 	return (
