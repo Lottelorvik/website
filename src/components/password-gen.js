@@ -45,47 +45,47 @@ function PasswordGenerator() {
 	return (
 		<div className='container'>
 			<div className='password-generator-con'>
-				<form onSubmit={handleSubmit}>
-					<label>
-						<div className='no-characters-text'>Number of characters:</div>
-						<input
-							type='range'
-							min='8'
-							max='100'
-							value={numCharacters}
-							className='slider'
-							onChange={event => setNumCharacters(parseInt(event.target.value))}
-						/>
-						<div className='all-text'>{numCharacters} characters</div>
-					</label>
-					<br />
-					<label>
-						<div className='all-text'>Include symbols:</div>
+				<label className='no-characters-text input-fields'>Password Generator 🤖</label>
+				<div className='input-fields'>
+					<input
+						type='range'
+						min='8'
+						max='100'
+						value={numCharacters}
+						className='slider'
+						onChange={event => setNumCharacters(parseInt(event.target.value))}
+					/>
+					<div className='all-text'>{numCharacters}</div>
+				</div>
 
+				<div className='input-fields'>
+					<div className='all-text'>Include symbols</div>
+
+					<label className='toggler-wrapper style'>
 						<input
 							type='checkbox'
 							checked={includeSymbols}
 							onChange={event => setIncludeSymbols(event.target.checked)}
 						/>
+						<div className='toggler-slider'>
+							<div className='toggler-knob'></div>
+						</div>
 					</label>
+				</div>
 
-					<br />
-					<button type='submit' className='pas-btn'>
-						Generate Password
-					</button>
-				</form>
-				<br />
-				{generatedPassword && (
-					<div className='all-text'>
-						<div id='gen-password'>
+				<button type='submit' className='pas-btn' onClick={handleSubmit}>
+					Generate Password
+				</button>
+
+				<div className='input-fields'>
+					{generatedPassword && (
+						<div className='all-text'>
 							<strong>Generated Password: </strong>
 							{generatedPassword} <div />
-							<button onClick={copyText} className='copy-icon'>
-								<img src={copy} />
-							</button>
+							<button onClick={copyText}> Copy </button>
 						</div>
-					</div>
-				)}
+					)}
+				</div>
 			</div>
 		</div>
 	);
