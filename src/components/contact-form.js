@@ -90,7 +90,7 @@ function ContactForm({ setForm, setShowForm, ToggleContactForm }) {
 			</div> */}
 			<form className='contact-form ' onSubmit={handleSubmit}>
 				<p className='contact-box-header'>Get in touch! </p>
-				<h>________________</h>
+				<p>________________</p>
 				<p className='outro-text'>
 					Thank you for visiting my website and please feel free to contact me if you have any
 					inquiries or opportunities!
