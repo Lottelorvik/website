@@ -1,17 +1,26 @@
-.introsectionbackground {
+.image-wrapper {
 	width: 100%;
+	height: 89vh;
+	overflow: hidden;
+}
+
+.introsectionbackground {
+	width: 110%;
 	height: 90vh;
 	display: flex;
 	/* background: linear-gradient(110deg, #ff3838 60%, #4d01ff 60%); */
-	background-image: url('/src/img/ocean.jpg');
+	background-image: url('/src/img/road.jpg');
 	box-sizing: border-box;
-	background-position: top;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-attachment: scroll;
 	background-position: center;
-	background-size: auto;
+	background-size: cover;
 	justify-content: center; /* align item horizontally */
 	align-items: center;
+	filter: blur(6px);
+	-webkit-filter: blur(5px);
+	margin-left: -10px;
+	margin-top: -10px;
 }
 
 *,
@@ -20,12 +29,21 @@
 	box-sizing: inherit;
 }
 
+.border {
+	backdrop-filter: blur(8px);
+}
+
 .background-box {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	align-content: center !important;
 	flex-direction: column !important;
+	z-index: 2;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .lotte {
@@ -56,12 +74,6 @@
 	}
 	.lorvik {
 		font-size: 90px;
-	}
-
-	.introsectionbackground {
-		background-image: url('/src/img/ocean-ver.jpg');
-		background-position: center;
-		background-size: cover;
 	}
 }
 

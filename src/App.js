@@ -1,7 +1,6 @@
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import supabase from './supabase';
-import backgroundvideo from './img/earthy.mp4';
 //CSS files
 import './App.css';
 // Components
@@ -33,22 +32,13 @@ function App() {
 
 	return (
 		<>
-			<section className='outer-introsection'>
-				<div className='introsectionbackground'>
-					<LotteLorvik />
-				</div>
-			</section>
+			<LotteLorvik />
 
 			<div className='outercontainer'>
-				<div className='container boxtext '>
-					<AboutMe />
-				</div>
-
-				{/* Getting my components */}
+				<AboutMe />
 				<Competencies />
 				<div className='project-box'>
 					<PasswordGenerator />
-
 					<Mathquiz />
 				</div>
 				<ContactMe />
