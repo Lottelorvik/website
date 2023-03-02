@@ -17,16 +17,17 @@
 }
 
 .lotteimg {
+	display: flex;
 	object-fit: cover;
+	position: relative;
 	border-radius: 50%;
-	margin-top: 4rem;
-	margin-bottom: 5rem;
 	width: 30rem;
 	height: 30rem;
+	top: 30px;
 }
 
 .boxes {
-	background: #ffffff;
+	background: transparent;
 	/* box-shadow: rgb(0, 0, 0) 1px 1px 1rem; */
 	padding: 0 4rem 3rem;
 	margin-top: 4rem;
@@ -34,9 +35,9 @@
 	width: 30%;
 	border-color: #161200;
 	height: fit-content;
-	box-shadow: rgba(63, 119, 160, 0.4) -5px 5px, rgba(63, 119, 160, 0.4) -10px 10px,
+	/* box-shadow: rgba(63, 119, 160, 0.4) -5px 5px, rgba(63, 119, 160, 0.4) -10px 10px,
 		rgba(63, 119, 160, 0.4) -15px 15px, rgba(63, 119, 160, 0.4) -20px 20px,
-		rgba(63, 119, 160, 0.4) -25px 25px;
+		rgba(63, 119, 160, 0.4) -25px 25px; */
 }
 
 .boxtext {
@@ -49,7 +50,7 @@
 .text-box-div {
 	position: relative;
 	left: 100px;
-	top: 80px;
+	top: 50px;
 }
 
 .about-me-div {
@@ -65,11 +66,9 @@
 	}
 
 	.lotteimg {
-		align-items: center;
-		width: 300px;
-		height: 300px;
-		margin-top: 0;
-		margin-bottom: 0;
+		margin-right: 0px;
+		width: 450px;
+		height: 450px;
 	}
 	.boxes {
 		width: inherit !important;
@@ -109,4 +108,39 @@
 
 #reacttext {
 	color: #00c2cb;
+}
+
+/* CV */
+
+.cv {
+	background-image: linear-gradient(to right, #54b3d6, #54b3d6 50%, #000 50%);
+	background-size: 200% 100%;
+	background-position: -100%;
+	display: inline-block;
+	padding: 5px 0;
+	position: relative;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: all 0.3s ease-in-out;
+	font-size: 18px;
+}
+
+.cv:before {
+	content: '';
+	background: #54b3d6;
+	display: block;
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	width: 0;
+	height: 3px;
+	transition: all 0.3s ease-in-out;
+}
+
+.cv:hover {
+	background-position: 0;
+}
+
+.cv:hover::before {
+	width: 100%;
 }

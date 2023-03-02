@@ -93,7 +93,7 @@ function PasswordGenerator() {
 					{generatedPassword && (
 						<div className='all-text tooltip' onClick={copyText}>
 							{generatedPassword}
-							<span class='tooltiptext'>Copy</span>
+							<span className='tooltiptext'>Copy</span>
 						</div>
 					)}
 				</div>

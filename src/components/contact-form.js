@@ -70,7 +70,7 @@ function ContactForm({ SetShowForm, setForms, ToggleContactForm }) {
 	}
 
 	return (
-		<div>
+		<div className='con-box'>
 			{/* <div className='outro-box'>
 				<p className='outro-text'>
 					Thank you for visiting my website and please feel free to contact me if you have any
@@ -78,15 +78,15 @@ function ContactForm({ SetShowForm, setForms, ToggleContactForm }) {
 				</p>
 			</div> */}
 			<form className='contact-form '>
-				<p className='contact-box-header'>Get in touch! </p>
-				<p>________________</p>
+				<p className='contact-box-header'>Kontakt</p>
+				<p>───────────────────────</p>
 				<p className='outro-text'>
-					Thank you for visiting my website and please feel free to contact me if you have any
-					inquiries or opportunities!
+					Tak fordi du besøgte min hjemmeside - du er velkommen til at smide en besked afsted til
+					mig hvis du har nogen forespørgsler eller muligheder!
 				</p>
 				<input
 					type='text'
-					placeholder='Enter your name...'
+					placeholder='Fulde navn...'
 					value={full_name}
 					onChange={e => setFullName(e.target.value)}
 					className='contact-form-text'
@@ -96,7 +96,7 @@ function ContactForm({ SetShowForm, setForms, ToggleContactForm }) {
 				<input
 					className='contact-form-text'
 					type='text'
-					placeholder='Enter your e-mail...'
+					placeholder='E-mail...'
 					value={email}
 					onChange={e => setEmail(e.target.value)}
 					disabled={isUploading}
@@ -104,7 +104,7 @@ function ContactForm({ SetShowForm, setForms, ToggleContactForm }) {
 
 				<input
 					type='text'
-					placeholder='Enter message... (max 500)'
+					placeholder='Besked... (max 500)'
 					value={message}
 					onChange={e => setMessage(e.target.value)}
 					className='contact-form-text'
@@ -117,7 +117,7 @@ function ContactForm({ SetShowForm, setForms, ToggleContactForm }) {
 					disabled={isUploading}
 					onClick={handleSubmit}
 				>
-					SUBMIT
+					SEND
 				</button>
 			</form>
 		</div>
@@ -126,20 +126,22 @@ function ContactForm({ SetShowForm, setForms, ToggleContactForm }) {
 
 function Thankyou({ ToggleContactForm }) {
 	return (
-		<div className='thank-you-box'>
-			<p className='contact-box-header'> Sent! </p>
-			<p className='thank-you-box-text'>
-				Thank you for your mail! <br></br>
-				<br></br>I will get back to you as soon as possible.
-			</p>
+		<div className='con-box'>
+			<div className='thank-you-box'>
+				<p className='contact-box-header'> Sendt! </p>
+				<p className='thank-you-box-text'>
+					Tak for din besked! <br></br>
+					<br></br>Jeg vender tilbage hurtigst muligt.
+				</p>
 
-			<button
-				type='button'
-				className='contact-btn contact-btn-large bottom-btn '
-				onClick={ToggleContactForm}
-			>
-				Back!
-			</button>
+				<button
+					type='button'
+					className='contact-btn contact-btn-large bottom-btn '
+					onClick={ToggleContactForm}
+				>
+					Tilbage
+				</button>
+			</div>
 		</div>
 	);
 }
