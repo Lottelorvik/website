@@ -1,0 +1,128 @@
+.project-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	box-sizing: border-box;
+	align-items: center;
+	justify-content: center;
+	padding: 100px 100px 100px;
+}
+
+.project-inner-first {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 30px;
+}
+
+.project-inner-second {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 30px;
+}
+
+.project-img {
+	width: 700px;
+	border-radius: 30px;
+}
+
+.project-header {
+	font-family: 'Roboto', sans-serif;
+	font-size: 70px;
+	font-weight: 300;
+	line-height: 1.77;
+	color: rgb(82, 82, 82);
+	margin: 50px 0px 50px 0px;
+}
+.project-title {
+	font-family: 'Roboto', sans-serif;
+	font-size: 50px;
+	font-weight: 300;
+	line-height: 1.77;
+	color: rgb(82, 82, 82);
+	margin: 50px 0px 50px 0px;
+}
+
+.text {
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 18px;
+	color: rgb(85, 85, 85);
+	text-align: left;
+	word-spacing: 3px;
+	width: 400px;
+	padding: 15px 15px 15px;
+}
+
+.rounded {
+	display: flex;
+	border-top: 4px solid #d6d6d6 !important;
+	border-radius: 5px;
+	width: 60%;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+}
+
+/* Links */
+
+.link {
+	background-image: linear-gradient(to right, #54b3d6, #54b3d6 50%, #000 50%);
+	background-size: 200% 100%;
+	background-position: -100%;
+	display: inline-block;
+	padding: 5px 0;
+	position: relative;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: all 0.3s ease-in-out;
+	font-size: 18px;
+}
+
+.link:before {
+	content: '';
+	background: #54b3d6;
+	display: block;
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	width: 0;
+	height: 3px;
+	transition: all 0.3s ease-in-out;
+}
+
+.link:hover {
+	background-position: 0;
+}
+
+.link:hover::before {
+	width: 100%;
+}
+
+@media (max-width: 1200px) {
+	.project-inner-first {
+		flex-direction: column-reverse;
+	}
+	.project-inner-second {
+		flex-direction: column;
+	}
+	.project-img {
+		width: 95%;
+	}
+	.text {
+		width: 95%;
+	}
+	.project-container {
+		padding: 0px;
+	}
+	.project-header {
+		font-size: 50px;
+		margin-top: 6px;
+		margin-bottom: 0;
+	}
+}

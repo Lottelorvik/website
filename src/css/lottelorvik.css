@@ -8,8 +8,7 @@
 	width: 110%;
 	height: 90vh;
 	display: flex;
-	/* background: linear-gradient(110deg, #ff3838 60%, #4d01ff 60%); */
-	background-image: url('/src/img/road.jpg');
+	background-image: url('/src/img/3.jpg');
 	box-sizing: border-box;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
@@ -17,8 +16,8 @@
 	background-size: cover;
 	justify-content: center; /* align item horizontally */
 	align-items: center;
-	filter: blur(6px);
-	-webkit-filter: blur(5px);
+	/* filter: blur(3px);
+	-webkit-filter: blur(0px); */
 	margin-left: -10px;
 	margin-top: -10px;
 }
@@ -47,9 +46,10 @@
 }
 
 .lotte {
-	font-family: 'Playfair Display SC', serif;
+	font-family: 'Noto Sans Display', sans-serif;
 	color: rgb(255, 255, 255);
-	font-size: 7rem;
+	font-size: 80px;
+	font-weight: 600;
 	white-space: nowrap;
 	text-align: center;
 	margin-left: -15%;
@@ -59,9 +59,10 @@
 }
 
 .lorvik {
-	font-family: 'Playfair Display SC', serif;
+	font-family: 'Noto Sans Display', sans-serif;
 	color: rgb(255, 255, 255);
-	font-size: 9rem;
+	font-size: 100px;
+	font-weight: 600;
 	white-space: nowrap;
 	text-align: center;
 	margin-left: 3%;
@@ -73,7 +74,7 @@
 		font-size: 60px;
 	}
 	.lorvik {
-		font-size: 90px;
+		font-size: 80px;
 	}
 }
 
@@ -91,9 +92,9 @@ hr {
 }
 
 .typed-out {
-	font-family: 'Playfair Display SC', serif;
+	font-family: 'Noto Sans Display', sans-serif;
 	overflow: hidden;
-	color: rgb(255, 197, 90);
+	color: orange;
 	font-size: 1.3rem;
 	overflow: hidden; /* Ensures the content is not revealed until the animation */
 	border-right: 0.15em solid orange; /* The typwriter cursor */
@@ -121,5 +122,34 @@ hr {
 	}
 	50% {
 		border-color: orange;
+	}
+}
+
+.wave-overlay {
+	position: absolute;
+
+	top: 220px;
+}
+
+@media (max-width: 1050px) {
+	.wave-overlay {
+		top: 300px;
+	}
+}
+
+@media (max-width: 800px) {
+	.wave-overlay {
+		top: 280px;
+	}
+}
+
+@media (max-width: 600px) {
+	.wave-overlay {
+		top: 320px;
+	}
+}
+@media (max-width: 356px) {
+	.wave-overlay {
+		top: 320px;
 	}
 }

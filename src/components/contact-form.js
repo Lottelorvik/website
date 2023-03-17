@@ -11,7 +11,7 @@ function ContactMe() {
 	}
 
 	return (
-		<div className='container'>
+		<div className='con-container'>
 			{showForm ? (
 				<ContactForm
 					ToggleContactForm={ToggleContactForm}
@@ -70,7 +70,7 @@ function ContactForm({ SetShowForm, setForms, ToggleContactForm }) {
 	}
 
 	return (
-		<div className='con-box'>
+		<div className='con-box' id='contact'>
 			{/* <div className='outro-box'>
 				<p className='outro-text'>
 					Thank you for visiting my website and please feel free to contact me if you have any
@@ -127,20 +127,22 @@ function ContactForm({ SetShowForm, setForms, ToggleContactForm }) {
 function Thankyou({ ToggleContactForm }) {
 	return (
 		<div className='con-box'>
-			<div className='thank-you-box'>
-				<p className='contact-box-header'> Sendt! </p>
-				<p className='thank-you-box-text'>
-					Tak for din besked! <br></br>
-					<br></br>Jeg vender tilbage hurtigst muligt.
-				</p>
+			<div className='contact-form '>
+				<div className='thank-you-box'>
+					<p className='contact-box-header'> Sendt! </p>
+					<p className='thank-you-box-text'>
+						Tak for din besked! <br></br>
+						<br></br>Jeg vender tilbage hurtigst muligt.
+					</p>
 
-				<button
-					type='button'
-					className='contact-btn contact-btn-large bottom-btn '
-					onClick={ToggleContactForm}
-				>
-					Tilbage
-				</button>
+					<button
+						type='button'
+						className='contact-btn contact-btn-large bottom-btn '
+						onClick={ToggleContactForm}
+					>
+						Tilbage
+					</button>
+				</div>
 			</div>
 		</div>
 	);

@@ -7,7 +7,7 @@ function Competencies() {
 	return (
 		<>
 			<div className='competencies-div'>
-				<div className='competencies-header'>KOMPETENCER</div>
+				<div className='competencies-header'>Kompetencer</div>
 				<div className='competencies-categories-text popup'>
 					<div className='competencies-categories-text-hover' onClick={() => setShow(s => !s)}>
 						Web development👇

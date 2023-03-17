@@ -6,10 +6,11 @@ import './App.css';
 // Components
 import LotteLorvik from './components/lottelorvik';
 import AboutMe from './components/aboutme';
-import Mathquiz from './components/mathquiz.js';
-import PasswordGenerator from './components/password-gen.js';
+
 import Competencies from './components/competencies';
 import ContactMe from './components/contact-form';
+import Menubar from './components/menubar';
+import Projects from './components/projects';
 
 function App() {
 	const reveal = () => {
@@ -32,15 +33,13 @@ function App() {
 
 	return (
 		<>
+			<Menubar />
 			<LotteLorvik />
 
 			<div className='outercontainer'>
 				<AboutMe />
-				<Competencies />
-				<div className='project-box'>
-					<PasswordGenerator />
-					<Mathquiz />
-				</div>
+				<Projects />
+				{/* <Competencies /> */}
 				<ContactMe />
 			</div>
 		</>

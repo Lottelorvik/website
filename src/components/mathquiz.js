@@ -13,11 +13,13 @@ function Mathquiz() {
 	const [quizComplete, setQuizComplete] = useState(false);
 	const [seconds, setSeconds] = useState(20);
 	const [showStartButton, setShowStartButton] = useState(true);
+	const [showQuizTitle, setShowQuizTitle] = useState(true);
 
 	const handleStartClick = () => {
 		setIsDivVisible(true);
 		setShowStartButton(false);
 		setSeconds(20);
+		setShowQuizTitle(true);
 	};
 
 	useEffect(() => {
@@ -86,14 +88,15 @@ function Mathquiz() {
 	return (
 		<div className='quiz-container'>
 			<div className='quiz-container2'>
-				<div className='quiz-header'>Math quiz!</div>
-				<div className='quiz-title'>Get as many as you can in 20 seconds!</div>
-
 				<div>
-					{showStartButton && (
-						<button className='quiz-btn' onClick={handleStartClick}>
-							<div className='start-btn'>Start</div>
-						</button>
+					{showStartButton && showQuizTitle && (
+						<>
+							<div className='quiz-header'>Math quiz!</div>
+							<div className='quiz-title'>Get as many as you can in 20 seconds!</div>
+							<button className='quiz-btn' onClick={handleStartClick}>
+								<div className='start-btn'>Start</div>
+							</button>
+						</>
 					)}
 				</div>
 

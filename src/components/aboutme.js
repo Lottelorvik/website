@@ -3,11 +3,11 @@ import lotteimg from '../img/lotteimg.JPG';
 
 function AboutMe() {
 	return (
-		<div className='container boxtext '>
+		<div className='container boxtext' id='about'>
 			<div className='about-me'>
 				<img className='lotteimg' alt='portræt' src={lotteimg} />
-				<div className='boxtext boxes text-box-div'>
-					<div className='boxtitle about-me-header about-me-div'>OM MIG</div>
+				<div className='boxtext boxes'>
+					<div className='about-me-header about-me-div'>Om mig</div>
 					<h3>Hej og velkommen til min personlige hjemmeside! 👋 </h3>
 					<br></br>Mit navn er Lotte og jeg er en passioneret frontendudvikler hvis drivkraft ligger
 					i at lave interaktive webapplikationer der er visuelt appellerende og brugervenlige. Jeg

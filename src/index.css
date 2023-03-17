@@ -16,7 +16,7 @@
 } */
 
 body {
-	background-color: #f1eded;
+	background-color: rgb(252, 252, 252);
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -30,4 +30,7 @@ h1 {
 #root {
 	min-height: 2000px;
 	margin: 0 auto;
+}
+html {
+	scroll-behavior: smooth;
 }

@@ -1,0 +1,49 @@
+.topnav {
+	overflow: hidden;
+	background-color: #658f9c;
+	position: fixed;
+	width: 100%;
+	z-index: 5;
+	display: inline-block;
+	white-space: nowrap;
+	scroll-behavior: smooth;
+}
+
+.topnav a {
+	float: right;
+	color: #ffffff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	font-family: 'Roboto';
+	scroll-behavior: smooth;
+}
+
+.topnav a:hover {
+	background-color: #d2f5ff;
+	color: black;
+}
+
+.topnav a.active {
+	background-color: #94bfcd;
+	color: white;
+}
+
+.topnav b {
+	float: left;
+	color: #ffffff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	font-family: 'Roboto';
+	scroll-behavior: smooth;
+}
+
+.logo {
+	display: flex;
+	object-fit: cover;
+	width: 20px;
+	height: 20px;
+}
