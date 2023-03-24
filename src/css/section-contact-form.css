@@ -165,3 +165,9 @@
 		width: 400px;
 	}
 }
+
+@media (max-width: 500px) {
+	.outro-text {
+		width: 300px;
+	}
+}

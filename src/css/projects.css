@@ -50,7 +50,7 @@
 
 .text {
 	font-family: 'Nunito Sans', sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	color: rgb(85, 85, 85);
 	text-align: left;
 	word-spacing: 3px;
@@ -124,5 +124,73 @@
 		font-size: 50px;
 		margin-top: 6px;
 		margin-bottom: 0;
+	}
+}
+
+/* fade in animation */
+.reveal {
+	position: relative;
+	opacity: 0;
+}
+
+.reveal.active {
+	opacity: 1;
+}
+
+.active.fade-left {
+	animation: fade-left 0.8s ease-in;
+}
+.active.fade-right {
+	animation: fade-right 0.8s ease-in;
+}
+
+@keyframes fade-left {
+	0% {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fade-right {
+	0% {
+		transform: translateX(100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@media (max-width: 500px) {
+	.text {
+		width: 98%;
+		padding: 15px 1px 1px;
+		text-align: justify;
+	}
+	@keyframes fade-left {
+		0% {
+			transform: translateX(-20px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
+	@keyframes fade-right {
+		0% {
+			transform: translateX(20px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
 	}
 }

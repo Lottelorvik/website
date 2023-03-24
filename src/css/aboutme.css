@@ -19,7 +19,6 @@
 	object-fit: cover;
 	position: relative;
 	border-radius: 50%;
-	min-width: 470px;
 	width: 470px;
 	height: 470px;
 	top: 30px;
@@ -82,21 +81,11 @@
 		top: 0;
 	}
 }
-
-#yellowtext {
-	color: #ecd92f;
-}
-
-#orangetext {
-	color: #ff8800;
-}
-
-#bluetext {
-	color: rgb(0, 132, 255);
-}
-
-#reacttext {
-	color: #00c2cb;
+@media (max-width: 520px) {
+	.lotteimg {
+		width: 300px !important;
+		height: 300px !important;
+	}
 }
 
 /* CV */
